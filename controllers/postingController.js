@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Posting = require('../models/Posting');
 
-router.get('/', (req, res) => {
+router.get('/posting', (req, res) => {
     Posting.find().then((postings) => res.json(postings));
 });
 
-router.get('/:id', async (req, res, next) => {
+router.get('/posting/:id', async (req, res, next) => {
     try {
         const postingId = await Posting.findById(req.params.id);
         res.json(postingId);
@@ -15,12 +15,12 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/posting/add', async (req, res) => {
     const newPosting = await Posting.create(req.body)
     res.status(201).json(newPosting)
 })
 
-router.put('/:id', (req, res) => {
+router.put('/posting/update/:id', (req, res) => {
     Posting.findOneAndUpdate({_id: req.params.id}, req.body, {
         new: true,
     }).then((updatePosting) => {
@@ -30,7 +30,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/posting/delete/:id', (req, res) => {
     Posting.findOneAndDelete({
         _id: req.params.id,
     }).then((deletePosting) => {
