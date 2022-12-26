@@ -23,7 +23,12 @@ app.use('/thedevhub', postingController)
 const noteController = require('./controllers/noteController');
 app.use('/thedevhub', noteController)
 
+app.use((err, req, res, next) => {
+    const statusCode = res.statusCode || 500
+    const message = err.message || 'Internal Server Error'
+    res.status(statusCode).send(message)
+})
 
 app.listen(app.get('port'), () => {
-    console.log('listening on port ' + app.get('port'))
-})
+	console.log(`✅ PORT: ${app.get('port')} 🌟`);
+});
