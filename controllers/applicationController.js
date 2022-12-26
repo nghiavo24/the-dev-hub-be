@@ -21,7 +21,7 @@ router.get('/application/:id', async (req, res, next) => {
     }
 })
 
-router.post('/application/add/:id', async (req, res, next) => {
+router.post('/application/add', async (req, res, next) => {
     try {
         const newApplication = await Application.create(req.body)
         res.status(201).json(newApplication)
@@ -30,7 +30,7 @@ router.post('/application/add/:id', async (req, res, next) => {
     }
 })
 
-router.put('/:id', async (req, res, next) => {
+router.put('/application/edit/:id', async (req, res, next) => {
     try {
         const udpateApplication = await Application.findByIdAndUpdate(
             req.params.id,
