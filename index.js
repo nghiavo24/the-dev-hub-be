@@ -20,7 +20,8 @@ app.use('/thedevhub', applicationController)
 const postingController = require('./controllers/postingController');
 app.use('/thedevhub', postingController)
 
-
+const noteController = require('./controllers/noteController');
+app.use('/thedevhub', noteController)
 
 
 app.listen(app.get('port'), () => {
