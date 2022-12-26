@@ -1,15 +1,22 @@
 const express = require('express')
-const mongoose = require('mongoose')
 const cors = require('cors')
-const app = express()
 
-app.use(cors())
+const mongoose = require('mongoose')
+const app = express()
+app.set('port', process.env.PORT || 8080)
+
 
 app.use(express.json())
-
 app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
-app.set('port', process.env.PORT || 8080)
+app.get('/', (req, res) => {
+    res.redirect('/thedevhub')
+})
+
+const applicationController = require('./controllers/applicationController');
+app.use('/thedevhub', applicationController)
+
 
 app.listen(app.get('port'), () => {
     console.log('listening on port ' + app.get('port'))
