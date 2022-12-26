@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const mongoURI =
   process.env.NODE_ENV === 'production'
@@ -7,13 +8,11 @@ const mongoURI =
 
 mongoose
     .connect(mongoURI, {
-        useNewUrlParser: true,
-        useCreateIndex: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }, err => {
+      if(err) throw err;
+      console.log(`Connected to Mongo 🚀 at ${mongoURI}`)
     })
-    .then((instance) => 
-        console.log('Connected to db: ${instance.connections[0].name}'))
-    .catch((error) => console.log('Connection failed!', error));
 
 module.exports = mongoose
