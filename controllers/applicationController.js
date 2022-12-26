@@ -3,7 +3,7 @@ const router = express.Router()
 
 const Application = require('../models/Applications')
 
-router.get('/', async (req, res, next) => {
+router.get('/application', async (req, res, next) => {
     try {
         const applications = await Application.find({})
         res.json(applications)
@@ -12,7 +12,7 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-router.get('/:id', async (req, res, next) => {
+router.get('/application/:id', async (req, res, next) => {
     try {
         const application = await Application.findById(req.params.id)
         res.json(application)
@@ -21,7 +21,7 @@ router.get('/:id', async (req, res, next) => {
     }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/application/add/:id', async (req, res, next) => {
     try {
         const newApplication = await Application.create(req.body)
         res.status(201).json(newApplication)
@@ -47,7 +47,7 @@ router.put('/:id', async (req, res, next) => {
     }
 })
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/application/delete/:id', async (req, res, next) => {
     try {
         const deleteApplication = await Application.findByIdAndDelete(req.params.id)
         if(deleteApplication) {
