@@ -13,7 +13,11 @@
     "url": "git+https://github.com/nghiavo24/the-dev-hub-be.git"
   },
   "keywords": [],
-  "author": ["Morgan", "Jeffrey", "Nathan"],
+  "author": [
+    "Morgan",
+    "Jeffrey",
+    "Nathan"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nghiavo24/the-dev-hub-be/issues"
@@ -23,6 +27,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "firebase-admin": "^11.4.1",
     "mongoose": "^6.8.1"
   },
   "devDependencies": {
