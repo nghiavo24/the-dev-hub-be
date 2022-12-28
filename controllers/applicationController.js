@@ -1,7 +1,8 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 
-const Application = require('../models/Applications')
+const Application = require('../models/Applications');
+const Note = require('../models/Note');
 
 router.get('/application', async (req, res, next) => {
     try {
@@ -50,6 +51,7 @@ router.put('/application/edit/:id', async (req, res, next) => {
 router.delete('/application/delete/:id', async (req, res, next) => {
     try {
         const deleteApplication = await Application.findByIdAndDelete(req.params.id)
+        const deleteNotes = await Note.deleteMany({application: req.params.id})
         if(deleteApplication) {
             res.sendStatus(204)
         } else {
