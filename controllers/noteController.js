@@ -2,7 +2,7 @@ const express = require('express');
 const Note = require('../models/Note');
 const router = express.Router();
 
-router.get("/notes", async (req, res, next) => {
+router.get("/note", async (req, res, next) => {
     try{
         const notes = await Note.find({});
         res.json(notes);
@@ -11,7 +11,7 @@ router.get("/notes", async (req, res, next) => {
     }
 })
 
-router.get("/notes/:id", async (req, res, next) => {
+router.get("/note/:id", async (req, res, next) => {
     try{
         const notes = await Note.find({application: req.params.id});
         res.json(notes);
@@ -20,7 +20,7 @@ router.get("/notes/:id", async (req, res, next) => {
     }
 })
 
-router.post("/notes/add/:id", async (req, res, next) =>{
+router.post("/note/create/:id", async (req, res, next) =>{
     try{
         req.body.application = req.params.id;
         const newNote = await Note.create(req.body);
@@ -30,7 +30,7 @@ router.post("/notes/add/:id", async (req, res, next) =>{
     }
 })
 
-router.delete("/notes/delete/:id", async (req, res, next) =>{
+router.delete("/note/delete/:id", async (req, res, next) =>{
     try{
         const deleteNote = await Note.findOneAndDelete({_id: req.params.id})
         .then((note) => {res.sendStatus(202)})

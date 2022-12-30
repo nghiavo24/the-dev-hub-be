@@ -15,7 +15,7 @@ router.get('/posting/:id', async (req, res, next) => {
     }
 });
 
-router.post('/posting/add', async (req, res) => {
+router.post('/posting/create', async (req, res) => {
     const newPosting = await Posting.create(req.body)
     res.status(201).json(newPosting)
 })
