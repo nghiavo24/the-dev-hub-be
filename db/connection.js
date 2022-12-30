@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const mongoURI =
-  process.env.NODE_ENV === 'production'
-    ? process.env.MONGODB_URI
-    : 'mongodb://localhost/thedevhub';
+let mongoURI = ""
+if (process.env.DB_URL === "production") {
+  mongoURI = process.env.DB_URL;
+} else {
+  mongoURI = "mongodb://localhost/thedevhub";
+}
 
 mongoose
     .connect(mongoURI, {

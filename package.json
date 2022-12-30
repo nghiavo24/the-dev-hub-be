@@ -1,11 +1,10 @@
 {
-  "name": "The Dev Hub",
+  "name": "TheDevHub",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,11 +12,7 @@
     "url": "git+https://github.com/nghiavo24/the-dev-hub-be.git"
   },
   "keywords": [],
-  "author": [
-    "Morgan",
-    "Jeffrey",
-    "Nathan"
-  ],
+  "author": [],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nghiavo24/the-dev-hub-be/issues"

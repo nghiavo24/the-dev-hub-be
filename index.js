@@ -4,11 +4,11 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const app = express()
 app.set('port', process.env.PORT || 8080)
-app.use(cors())
+
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.redirect('/thedevhub')
@@ -32,3 +32,5 @@ app.use((err, req, res, next) => {
 app.listen(app.get('port'), () => {
 	console.log(`✅ PORT: ${app.get('port')} 🌟`);
 });
+
+module.exports = app

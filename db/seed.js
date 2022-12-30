@@ -12,10 +12,10 @@ Posting.deleteMany()
   .catch(console.error)
   .finally(process.exit);
 
-Application.deleteMany()
-  .then(() => Application.insertMany(applicationData))
-  .then(console.log)
-  .catch(console.error)
-  .finally(process.exit);
+// Application.deleteMany()
+//   .then(() => Application.insertMany(applicationData))
+//   .then(console.log)
+//   .catch(console.error)
+//   .finally(process.exit);
 
   module.exports = mongoose;
