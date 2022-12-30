@@ -11,6 +11,8 @@ class Middleware {
 			}
 			return res.json({ message: 'Unauthorized' });
 		} catch (e) {
+			console.log(e)
+			console.log(token)
 			return res.json({ message: 'Internal Error' });
 		}
 	}

@@ -16,7 +16,8 @@ const PostingSchema = new Schema(
         },
         posted:{
             type: Date,
-            default: Date.now
+            default: Date.now,
+            require: true
         },
         url: String,
         note: String,
