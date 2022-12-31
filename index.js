@@ -15,13 +15,13 @@ app.get('/', (req, res) => {
 })
 
 const applicationController = require('./controllers/applicationController');
-app.use('/thedevhub', applicationController)
+app.use('/api/thedevhub', applicationController)
 
 const postingController = require('./controllers/postingController');
-app.use('/thedevhub', postingController)
+app.use('/api/thedevhub', postingController)
 
 const noteController = require('./controllers/noteController');
-app.use('/thedevhub', noteController)
+app.use('/api/thedevhub', noteController)
 
 app.use((err, req, res, next) => {
     const statusCode = res.statusCode || 500
