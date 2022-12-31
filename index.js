@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
 app.get('/', (req, res) => {
-    res.redirect('/thedevhub')
+    res.redirect('/api/thedevhub')
 })
 
 const applicationController = require('./controllers/applicationController');
