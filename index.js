@@ -3,7 +3,7 @@ const cors = require('cors')
 
 const mongoose = require('mongoose')
 const app = express()
-app.set('port', process.env.PORT || 8080)
+
 
 
 app.use(express.json())
@@ -28,6 +28,8 @@ app.use((err, req, res, next) => {
     const message = err.message || 'Internal Server Error'
     res.status(statusCode).send(message)
 })
+
+app.set('port', process.env.PORT || 8080)
 
 app.listen(app.get('port'), () => {
 	console.log(`✅ PORT: ${app.get('port')} 🌟`);
