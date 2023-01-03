@@ -1,11 +1,11 @@
 const express = require('express')
 const cors = require('cors')
+const middleware = require('./middleware/index')
 
 const mongoose = require('mongoose')
 const app = express()
 
-
-
+app.use(middleware.decodeToken);
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
