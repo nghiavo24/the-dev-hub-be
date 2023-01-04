@@ -1,14 +1,25 @@
 const express = require('express')
 const cors = require('cors')
+const middleware = require('./middleware/index')
 
 const mongoose = require('mongoose')
 const app = express()
 
-
-
+const corsOptions = {
+    origin: true,
+    credentials: true
+  }
+app.options('*', cors(corsOptions)); // preflight OPTIONS; put before other routes
+app.use(middleware.decodeToken);
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cors())
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 
 app.get('/', (req, res) => {
     res.redirect('/api/thedevhub')

@@ -6,7 +6,8 @@
         "work_site":"Hybrid",
         "location":"Orem, UT",
         "applied":"12-14-2022",
-        "url":"https://www.indeed.com/jobs?q=software+engineer&l=Provo%2C+UT&vjk=041711e459316186&advn=4361011677313895"
+        "url":"https://www.indeed.com/jobs?q=software+engineer&l=Provo%2C+UT&vjk=041711e459316186&advn=4361011677313895",
+        "user_id":"1Euc87PNgnNMBNULtRcWkbMyuAH2"
     },
     {
         "title": "Implementation & Success Software Engineer",
@@ -15,6 +16,7 @@
         "work_site":"Remote",
         "location":"Utah",
         "applied":"12-26-2022",
+        "user_id":"1Euc87PNgnNMBNULtRcWkbMyuAH2",
         "url":"https://www.indeed.com/jobs?q=software+engineer&l=Provo%2C+UT&vjk=ce42d4c81aa7a538&advn=4166783403213439"
     },
     {
@@ -24,6 +26,7 @@
         "work_site":"Remote",
         "location":"Orlando, FL",
         "applied":"01-04-2023",
+        "user_id":"TMkVSsbUzBcOOKPKQBtAWvW8O8r2",
         "url":"https://www.intel.com"
     },
     {
@@ -33,6 +36,7 @@
         "work_site":"In-person",
         "location":"Dallas, TX",
         "applied":"11-30-2022",
+        "user_id":"1Euc87PNgnNMBNULtRcWkbMyuAH2",
         "url":"https://www.apple.com"
     },
     {
@@ -42,6 +46,7 @@
         "work_site":"Hybrid",
         "location":"Boston, MA",
         "applied":"1-02-2023",
+        "user_id":"TMkVSsbUzBcOOKPKQBtAWvW8O8r2",
         "url":"https://www.galaxyiron.com"
     }
 ]

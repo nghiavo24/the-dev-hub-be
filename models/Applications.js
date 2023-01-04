@@ -30,7 +30,8 @@ const ApplicationSchema = new Schema(
             type: String,
             maxLength: 50 
         },
-        url: String
+        url: String,
+        user_id: String,
     }
 )
 
