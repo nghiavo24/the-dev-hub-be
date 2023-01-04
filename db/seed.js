@@ -11,6 +11,7 @@ Application.deleteMany({})
       .then(application => { 
         console.log(application)
       })
+    .finally(process.exit)
     })
 
 Posting.deleteMany({})
