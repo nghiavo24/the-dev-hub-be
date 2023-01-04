@@ -15,9 +15,7 @@ const ApplicationSchema = new Schema(
             maxLength: 50
         },
         applied:{
-            type: Date,
-            default: Date.now,
-            required: true
+            type: String,
         },
         hiring_manager:{
             type: String,
