@@ -150,9 +150,8 @@ const signInWithGoogle = () => {
 **_Jeffrey Koshy_**
 
 ## Resources:
-+  https://console.cloud.google.com/apis/credentials/consent?project=dev-hub-auth
-+  [.env file issues]https://stackoverflow.com/questions/48378337/create-react-app-not-picking-up-env-files
-+  [Resolve the CORS issue in the back-end] https://stackoverflow.com/questions/46904400/why-does-the-browser-send-an-options-request-even-though-my-frontend-code-is-jus
-+  [Schema help] https://mongoosejs.com/docs/schematypes.html
++  [.env file issues](https://stackoverflow.com/questions/48378337/create-react-app-not-picking-up-env-files)
++  [Resolve the CORS issue in the back-end] (https://stackoverflow.com/questions/46904400/why-does-the-browser-send-an-options-request-even-though-my-frontend-code-is-just)
++  [Schema help] (https://mongoosejs.com/docs/schematypes.html)
 
 **_(Anyone can put the resources they used here)_**
