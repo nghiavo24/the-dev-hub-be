@@ -151,7 +151,7 @@ const signInWithGoogle = () => {
 
 ## Resources:
 +  [.env file issues](https://stackoverflow.com/questions/48378337/create-react-app-not-picking-up-env-files)
-+  [Resolve the CORS issue in the back-end] (https://stackoverflow.com/questions/46904400/why-does-the-browser-send-an-options-request-even-though-my-frontend-code-is-just)
-+  [Schema help] (https://mongoosejs.com/docs/schematypes.html)
++  [Resolve the CORS issue in the back-end](https://stackoverflow.com/questions/46904400/why-does-the-browser-send-an-options-request-even-though-my-frontend-code-is-just)
++  [Schema help](https://mongoosejs.com/docs/schematypes.html)
 
 **_(Anyone can put the resources they used here)_**
