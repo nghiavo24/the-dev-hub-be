@@ -14,7 +14,8 @@
 ## About this API
 
 ### Information
-**_(Put your name here)_**
+The information in the back-end server is is protected by firebase authentication. This app is has full CRUD functionality.
+**_Jeffrey Koshy_**
 
 ### Installation
 1. Clone this repository to your labs folder and change directory into it.
@@ -23,10 +24,11 @@
 4. Run `nodemon index.js` to run localhost
 
 ### Resources Lists
-**_(Put your name here)_**
+GET- https://the-dev-hub-app.herokuapp.com/api/thedevhub/mainhub
+**_Jeffrey Koshy_**
 
 ## Deployment
-**_(Put your name here)_**
+**_Nathan_**
 
 ### Heroku: 
 Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps. The platform is elegant, flexible, and easy to use, offering developers the simplest path to getting our apps to market. Heroku plays a crucial part in our back-end server/app. 
@@ -41,7 +43,7 @@ Postman is a great tool when trying to dissect RESTful APIs made by others or te
 Vercel is the most accessible platform to deploy websites. By connecting the ** your GitHub repository** to Vercel, you can simply deploy the main branch to Vercel domains — and it does all the heavy lifting for you. **(Julian Wallis)**
 
 ## Req-Res Diagram
-**_(Put your name here)_**
+**_Morgan A_**
 
 ## User Stories
 + AAU, I want to be able to 
@@ -49,7 +51,7 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 + AAU, I want to able to 
 + AAU, I want to be able to 
 
-**_(Put your name here)_**
+**_Jeffrey Koshy_**
 
 ## Component Development
 Our main component includes:
@@ -59,7 +61,7 @@ Our main component includes:
 + Connection file: contain file to connect to MongoDB.
 + Models directory: contains two file that have schema properties and values.
 
-**_(Put your name here)_**
+**_Jeffrey Koshy_**
 
 
 ## Project Management 
@@ -72,11 +74,11 @@ _**
 
 ## Code Snippet
 
-**_(Put your name here)_**
+**_Jeffrey Koshy_**
 
 ## Issues & Resolutions
 
-**_(Put your name here)_**
+**_Jeffrey Koshy_**
 
 ## Resources:
 
