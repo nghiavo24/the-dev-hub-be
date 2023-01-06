@@ -64,6 +64,8 @@ Postman is a great tool when trying to dissect RESTful APIs made by others or te
 Vercel is the most accessible platform to deploy websites. By connecting the ** your GitHub repository** to Vercel, you can simply deploy the main branch to Vercel domains — and it does all the heavy lifting for you. **(Julian Wallis)**
 
 ## Req-Res Diagram
+![image](https://user-images.githubusercontent.com/114137772/210913054-17746858-649c-4c47-92d9-963437c858a7.png)
+
 **_Morgan A_**
 
 ## User Stories
