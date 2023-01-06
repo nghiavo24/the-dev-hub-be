@@ -67,10 +67,12 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 **_Morgan A_**
 
 ## User Stories
-+ AAU, I want to be able to view the post posting that are open, and click a link to apply for the job.
-+ AAU, I want to be able to keep track of the applications that I have done.
-+ AAU, I want to able to sign in using my gmail.
-+ AAU, I want to be able to edit, delete or add to the postings or applications after signing.
++ AAU, I want to be able to view the data of the job postings, after logging in.
++ AAU, I want to be able to view my own personal data of applications after logging in.
++ AAU, I want to able to add new postings and applications
++ AAU, I want to be able to edit or delete the current postings.
++ AAU, I want to be able to edit or delete my personal applications.
++ AAU, I want to be able to add notes to my applications page.
 
 **_Jeffrey Koshy_**
 
@@ -139,8 +141,8 @@ const signInWithGoogle = () => {
 
 ## Issues & Resolutions
 
--Heroku deployemnt was a something we submitted an issue ticket for. But we later found out that we just needed to wait a little longer for it to fully deploy.
--We also had trouble with trying to get the date to appear on the screen as the current moment that the person has posted the application or job posting. It displayed a long list of numbers, which were the date and time as well. Later we fixed this by changing it to a string and leting the user pick a date on the front-end.
+-Heroku deployemnt was an issue we submitted an issue ticket for. But we later found out that we just needed to wait a little longer for it to fully deploy.
+-We also had trouble with current the date after the person has created a posting or application. We used the external feature of "moment". It displayed a long list of numbers, which were the date and time as well. Later we fixed this by changing it to a string and leting the user pick a date on the front-end.
 
 
 **_Jeffrey Koshy_**
@@ -153,5 +155,7 @@ const signInWithGoogle = () => {
 + [What is Postman, and Why Should I Use It?](https://www.digitalcrafts.com/blog/student-blog-what-postman-and-why-use-it)
 + [Jullian Wallis - What Is VERCEL? Is It The Right Platform For Front-End Developers?](https://webo.digital/blog/what-is-vercel-is-it-the-right-platform-for-front-end-developers/)
 + [Whimsical - Used for the Req-Res Diagram](https://whimsical.com)
++ https://stackoverflow.com/questions/44854311/heroku-mean-stack-error-parameter-url-must-be-a-string-not-undefined
++  https://console.cloud.google.com/apis/credentials/consent?project=dev-hub-auth
 
 **_(Anyone can put the resources they used here)_**
