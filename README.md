@@ -1,5 +1,5 @@
-# Project 3 - Online Store App - Dealio (Back-End)
-<div align="center">An online organization tool by <strong>Morgan Arancibia</strong>, <strong>Jeffrey Koshy</strong>, and <strong>Nghia (Nathan) Vo</strong>
+# The Dev Hub (Capstone Project) - Server side
+<div align="center">An online organization tool by <strong>Morgan Arancibia</strong>, <strong>Jeffrey Koshy</strong>, and <strong>Nghia (Nathan) Vo</strong> to facilitate the job searching process.
 <br></br>
 <img src="https://i.imgur.com/ySdkLpv.png"/>
 </div>
@@ -7,20 +7,19 @@
 ## Project Overview
 
 + This repository is the back-end respository for the app.
-+ The back-end is deployed on Heroku: TBD
-+ The front-end is deployed on Vercel: TBD
-+ The associated front-end repository can be found: TBD
++ The back-end is deployed on Heroku: [here](the-dev-hub-app.herokuapp.com/api/thedevhub)
++ The front-end is deployed on Vercel: [here](the-dev-hub.vercel.app)
++ The associated front-end repository can be found: [here](https://github.com/nghiavo24/the-dev-hub-fe)
 
 ## About this API
 
 ### Information
-The information in the back-end server is is protected by firebase authentication. This app is has full CRUD functionality.
-**_Jeffrey Koshy_**
+The information in the back-end server is protected by Firebase authentication. This app is has full CRUD functionality for all of its databases.
 
 ### Installation
 1. Clone this repository to your labs folder and change directory into it.
 2. Run `npm i` to download required dependencies.
-3. Run `node db/seeb/seed-Item.js` to seed file.
+3. Run `node db/seed.js` to seed file.
 4. Run `nodemon index.js` to run localhost
 
 ### Technologies Used
@@ -41,7 +40,7 @@ GET- (https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting)
         "note": "After looking at this posting, I would need to study more on the Meta languages used"
     },
 ```
-Get- (https://the-dev-hub-app.herokuapp.com/api/thedevhub/application)
+GET - (https://the-dev-hub-app.herokuapp.com/api/thedevhub/application)
 ```
     {
         "title": "Lead Software Engineer",
@@ -56,7 +55,7 @@ Get- (https://the-dev-hub-app.herokuapp.com/api/thedevhub/application)
 
 
 ## Deployment
-**_Nathan_**
+The back-end of our application is a MongoDB, Express and Node with three models that includes a schema for Posting, Application, and Note. They follow RESTful architecture in naming and functionality of all available endpoints. Create, Read, Update, and Destroy (CRUD) was built in throughout the app. The back-end composes the following technologies/platforms:
 
 ### Heroku: 
 Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps. The platform is elegant, flexible, and easy to use, offering developers the simplest path to getting our apps to market. Heroku plays a crucial part in our back-end server/app. 
@@ -67,13 +66,10 @@ MongoDB is a source-available cross-platform document-oriented database program.
 ### Postman:
 Postman is a great tool when trying to dissect RESTful APIs made by others or test ones you have made yourself. It offers a sleek user interface with which to make HTML requests, without the hassle of writing a bunch of code just to test an API's functionality. **(Digitalcrafts)**
 
-### Vercel:
-Vercel is the most accessible platform to deploy websites. By connecting the ** your GitHub repository** to Vercel, you can simply deploy the main branch to Vercel domains — and it does all the heavy lifting for you. **(Julian Wallis)**
 
 ## Req-Res Diagram
 ![image](https://user-images.githubusercontent.com/114137772/210913054-17746858-649c-4c47-92d9-963437c858a7.png)
 
-**_Morgan A_**
 
 ## User Stories
 + AAU, I want to be able to view the data of the job postings, after logging in.
@@ -83,7 +79,6 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 + AAU, I want to be able to edit or delete my personal applications.
 + AAU, I want to be able to add notes to my applications page.
 
-**_Jeffrey Koshy_**
 
 ## Component Development
 Our main component includes:
@@ -94,71 +89,51 @@ Our main component includes:
 + Models directory: contains two file that have schema properties and values.
 
 
-
-
 ## Project Management 
-The team followed the daily SCRUM protocols and met for a 5 to 10 minutes a day to discuss small wins, achievements, any blockers, unresolved issues, obstacles that we were encountering. We also met before the day end to discuss any working plans and small goals for the next days.As for the Git workflow, we follow the *'Feature Branch'* method where we have the inital code set-up in the main branch. Everyone who is working will branch out to dev branch to work and push up the code accordingly. Guillermo, who is our Git Manager, then reviewed the latest code with the team to validate the code. He then will submit a pull request and merged that PR to the dev branch. Once our code met MVP, he then merge code to main branch for deployment to Heroku. The team was committed to collabrate creatively and equally. We tried to be mindful of that and divided the work so that everyone at least working on something on both back-end and front-end.
-**_Nathan
-_**
-<div align="center">
-<img src="https://user-images.githubusercontent.com/114704720/206955919-a8dbd9d1-3a2c-4e1d-bb16-b626883ce46c.png"/>
-</div>
+We follow the SCRUM & Agile development process throughout our project. We meet daily to discuss about things like our goals for the days, our blockers, any on-going issues. We did pair-programming as well as individual programming. Before we break for the day, we discussed about our progress, any wins, remaining issues.
+We follow the a strict 'Feature Branch' git workflow to avoid creating conflict and it had been very successful. Beside some minor conflicts due to unexpected changes in planning, we had no to very minimal conflict when merging. 
+As a leader, Nathan tried to be as transparent and communicative to his team members as much as possible. He discussed his ideas, opened to suggestions, checked in with team members to make sure they were on the same page and peformed many code reviews sessions. Nathan was also responsible for being the SCRUM leader and Git Manager. He made all the pull requests, reviewed and resolved conflicts if there were any, then he merged and delete that branch. 
 
 ## Code Snippet
-We are proud of this code, because it took many days and helps from instructors and TAs to get the authentification working. We tried with different options at first and finnaly ended with firebase. This allows the user to only view data if they are logged in.
+
+We had to add another condition to this middleware so it will not crash our server when we first started it. Without it, the server crashes as soon as the request is being sent to it.
 
 ```
-const signInWithGoogle = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-        if(user){
-          user.getIdToken().then((tkn, uid) => {
-            sessionStorage.setItem("accessToken", tkn);
-            setAuthorizedUser(true);
-            console.log(user)
-          })
+class Middleware{
+    async decodeToken(req, res, next) {
+        let token
+        if(req.headers.authorization){
+            console.log(req.headers)
+            token = req.headers.authorization.split(' ')[1];
+            console.log(token)
+        } else {
+            return res.status(401).json({ message: 'No authentication provided'})
         }
-        setUid(user.uid)
-        setDisplayName(user.displayName)
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
-      })
-  }
+        try{
+            const decodeValue = await admin.auth().verifyIdToken(token);
+            if(decodeValue) {
+                console.log(decodeValue);
+                return next();
+            }
+            return res.json({message: 'Unauthorized user!'});
+        }
+        catch(error){
+            console.log(error);
+            return res.json({message: 'Internal Error'});
+        }
+    }
+}
+```
 
-  const logOutUser = () => {
-    signOut(auth).then(() => {
-      sessionStorage.clear();
-      setAuthorizedUser(false);
-      navigate('/')
-      alert('Logged Out Successfully');
-    })
-    .catch((error) => {
-      alert(error);
-    })
-  }
-  ```
-
-
-**_Jeffrey Koshy_**
 
 ## Issues & Resolutions
+- Heroku deployment was an issue we submitted an issue ticket for. It showed that the server was deployed but when a request was received by the server, it caused the server to crash and rebuild. It turned about to be the secret key not being picked up by Heroku and we had to manually add that to the config in Heroku.
 
--Heroku deployemnt was an issue we submitted an issue ticket for. But we later found out that we just needed to wait a little longer for it to fully deploy.
--We also had trouble with current the date after the person has created a posting or application. We used the external feature of "moment". It displayed a long list of numbers, which were the date and time as well. Later we fixed this by changing it to a string and leting the user pick a date on the front-end.
+-  We also had trouble with current the date after the person has created a posting or application. We used the external feature of "moment". It displayed a long list of numbers, which were the date and time as well. Later we fixed this by changing it to a string and leting the user pick a date on the front-end. We also had to write a temporary code to solve the date being reversed when it was sent to MongoDB and sent back to us as YYYY/DD/MM.
 
-
-**_Jeffrey Koshy_**
 
 ## Resources:
 +  [.env file issues](https://stackoverflow.com/questions/48378337/create-react-app-not-picking-up-env-files)
 +  [Resolve the CORS issue in the back-end](https://stackoverflow.com/questions/46904400/why-does-the-browser-send-an-options-request-even-though-my-frontend-code-is-just)
 +  [Schema help](https://mongoosejs.com/docs/schematypes.html)
-
-**_(Anyone can put the resources they used here)_**
++  [Resolve the CORS issue in the back-end](https://stackoverflow.com/questions/46904400/why-does-the-browser-send-an-options-request-even-though-my-frontend-code-is-jus)
