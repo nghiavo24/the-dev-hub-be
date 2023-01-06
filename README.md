@@ -150,14 +150,9 @@ const signInWithGoogle = () => {
 **_Jeffrey Koshy_**
 
 ## Resources:
-
-+ [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-+ [Inline HTML](https://stackoverflow.com/questions/12090472/how-do-i-center-an-image-in-the-readme-md-file-on-github)
-+ [Intro to Mongo and Mongoose](https://git.generalassemb.ly/seir-ten3/intro-to-mongo-and-mongoose)
-+ [What is Postman, and Why Should I Use It?](https://www.digitalcrafts.com/blog/student-blog-what-postman-and-why-use-it)
-+ [Jullian Wallis - What Is VERCEL? Is It The Right Platform For Front-End Developers?](https://webo.digital/blog/what-is-vercel-is-it-the-right-platform-for-front-end-developers/)
-+ [Whimsical - Used for the Req-Res Diagram](https://whimsical.com)
-+ https://stackoverflow.com/questions/44854311/heroku-mean-stack-error-parameter-url-must-be-a-string-not-undefined
 +  https://console.cloud.google.com/apis/credentials/consent?project=dev-hub-auth
++  [.env file issues]https://stackoverflow.com/questions/48378337/create-react-app-not-picking-up-env-files
++  [Resolve the CORS issue in the back-end] https://stackoverflow.com/questions/46904400/why-does-the-browser-send-an-options-request-even-though-my-frontend-code-is-jus
++  [Schema help] https://mongoosejs.com/docs/schematypes.html
 
 **_(Anyone can put the resources they used here)_**
