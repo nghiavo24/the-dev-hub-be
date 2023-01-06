@@ -24,8 +24,29 @@ The information in the back-end server is is protected by firebase authenticatio
 4. Run `nodemon index.js` to run localhost
 
 ### Resources Lists
-GET- https://the-dev-hub-app.herokuapp.com/api/thedevhub/mainhub
-**_Jeffrey Koshy_**
+GET- (https://the-dev-hub-app.herokuapp.com/api/thedevhub/posting)
+```
+ {
+        "title": "Software Engineer",
+        "company": "Facebook",
+        "posted":"12-10-2022",
+        "url": "https://pennsylvania.tarta.ai/j/kMy9uoQBvf0LOA5EtCGa1122-software-engineer-systems-in-harrisburg-pennsylvania-at-facebook?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "note": "After looking at this posting, I would need to study more on the Meta languages used"
+    },
+```
+Get- (https://the-dev-hub-app.herokuapp.com/api/thedevhub/application)
+```
+    {
+        "title": "Lead Software Engineer",
+        "company":"Studies Weekly Inc",
+        "hiring_manager":"",
+        "work_site":"Hybrid",
+        "location":"Orem, UT",
+        "applied":"12-14-2022",
+        "url":"https://www.indeed.com/jobs?q=software+engineer&l=Provo%2C+UT&vjk=041711e459316186&advn=4361011677313895"
+    },
+```
+
 
 ## Deployment
 **_Nathan_**
@@ -46,10 +67,10 @@ Vercel is the most accessible platform to deploy websites. By connecting the ** 
 **_Morgan A_**
 
 ## User Stories
-+ AAU, I want to be able to 
-+ AAU, I want to be able to 
-+ AAU, I want to able to 
-+ AAU, I want to be able to 
++ AAU, I want to be able to view the post posting that are open, and click a link to apply for the job.
++ AAU, I want to be able to keep track of the applications that I have done.
++ AAU, I want to able to sign in using my gmail.
++ AAU, I want to be able to edit, delete or add to the postings or applications after signing.
 
 **_Jeffrey Koshy_**
 
@@ -61,7 +82,7 @@ Our main component includes:
 + Connection file: contain file to connect to MongoDB.
 + Models directory: contains two file that have schema properties and values.
 
-**_Jeffrey Koshy_**
+
 
 
 ## Project Management 
@@ -73,10 +94,54 @@ _**
 </div>
 
 ## Code Snippet
+We are proud of this code, because it took many days and helps from instructors and TAs to get the authentification working. We tried with different options at first and finnaly ended with firebase. This allows the user to only view data if they are logged in.
+
+```
+const signInWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        if(user){
+          user.getIdToken().then((tkn, uid) => {
+            sessionStorage.setItem("accessToken", tkn);
+            setAuthorizedUser(true);
+            console.log(user)
+          })
+        }
+        setUid(user.uid)
+        setDisplayName(user.displayName)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      })
+  }
+
+  const logOutUser = () => {
+    signOut(auth).then(() => {
+      sessionStorage.clear();
+      setAuthorizedUser(false);
+      navigate('/')
+      alert('Logged Out Successfully');
+    })
+    .catch((error) => {
+      alert(error);
+    })
+  }
+  ```
+
 
 **_Jeffrey Koshy_**
 
 ## Issues & Resolutions
+
+-Heroku deployemnt was a something we submitted an issue ticket for. But we later found out that we just needed to wait a little longer for it to fully deploy.
+-We also had trouble with trying to get the date to appear on the screen as the current moment that the person has posted the application or job posting. It displayed a long list of numbers, which were the date and time as well. Later we fixed this by changing it to a string and leting the user pick a date on the front-end.
+
 
 **_Jeffrey Koshy_**
 
